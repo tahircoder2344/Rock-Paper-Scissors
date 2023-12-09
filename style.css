@@ -25,18 +25,20 @@ h2{
   margin-top: 50px;
   gap: 3rem;
 }
-.choice {
-  height: 165px;
-  width: 165px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.choice::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  transition: opacity 0.3s ease-in-out; /* Transition for the glow */
+  box-shadow: inset 0 0 20px 10px rgba(8, 27, 49, 0); /* Initial transparent inner glow */
 }
 
-.choice:hover {
-  cursor: pointer;
-  background-color: #081b31;
+.choice:hover::before {
+  box-shadow: inset 0 0 20px 10px rgba(8, 27, 49, 0.6); /* Inner glow effect on hover */
 }
 
 img {
